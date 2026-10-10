@@ -1363,6 +1363,7 @@ function showResult() {
   let rotateY = 0;
 
   wrap.addEventListener("pointerdown", (e) => {
+    name.style.animation = "none";
     dragging = true;
     lastX = e.clientX;
     lastY = e.clientY;
