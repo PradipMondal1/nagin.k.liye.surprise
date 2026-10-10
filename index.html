@@ -1388,7 +1388,13 @@ function showResult() {
   });
 
   function stopDragging() {
+    if (!dragging) return;
     dragging = false;
+
+    // Resume the CSS 3D rotation after manual dragging ends.
+    name.style.animation = "";
+    name.style.transform = "";
+    name.style.animationPlayState = rotationPaused ? "paused, paused" : "running, running";
   }
 
   wrap.addEventListener("pointerup", stopDragging);
