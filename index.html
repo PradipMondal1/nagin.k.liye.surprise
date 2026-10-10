@@ -991,8 +991,6 @@ function toggleRotation() {
   rotationPaused = !rotationPaused;
   nameElement.style.animationPlayState =
     rotationPaused ? "paused, paused" : "running, running";
-}
-
 
   document.getElementById("rotateBtn").textContent =
     rotationPaused ? "🌀 Resume 3D" : "🌀 Pause 3D";
@@ -1365,19 +1363,6 @@ function showResult() {
   let rotateX = 0;
   let rotateY = 0;
 
-<script>
-(() => {
-  const wrap = document.getElementById("nameWrap");
-  const name = document.getElementById("radhuName");
-
-  if (!wrap || !name) return;
-
-  let dragging = false;
-  let lastX = 0;
-  let lastY = 0;
-  let rotateX = 0;
-  let rotateY = 0;
-
   wrap.style.touchAction = "none";
   name.style.transformStyle = "preserve-3d";
 
@@ -1396,9 +1381,7 @@ function showResult() {
 
     rotateY += (e.clientX - lastX) * 1.2;
     rotateX -= (e.clientY - lastY) * 1.2;
-
-    name.style.transform =
-      `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    name.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
     lastX = e.clientX;
     lastY = e.clientY;
@@ -1411,8 +1394,6 @@ function showResult() {
   wrap.addEventListener("pointerup", stopDragging);
   wrap.addEventListener("pointercancel", stopDragging);
 })();
-</script>
-
 </script>
 
 </body>
